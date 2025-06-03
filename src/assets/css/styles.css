@@ -1,0 +1,40 @@
+/* ESTILO GENERAL */
+
+@keyframes colorFan {
+    0% {
+        color: #1e5e17;
+    }
+
+    25% {
+        color: #236b2e;
+    }
+
+    50% {
+        color: #2b8a4a;
+    }
+
+    75% {
+        color: #3fae6a;
+    }
+
+    100% {
+        color: #1e5e17;
+    }
+}
+
+/* Hace que body llene toda la altura de la pantalla */
+html, body {
+    html, body {
+        height: auto; /* Asegura que la altura se ajuste al contenido */
+        min-height: 100%; /* Permite que la página se estire por completo */
+        overflow: auto; /* Permite el desplazamiento si el contenido es más grande que la pantalla */
+        padding-top: 60px; /* Ajusta según el tamaño del encabezado fijo */
+        background-color:#beebe3;; /* Cambia el color de fondo según tus preferencias */
+    }
+    
+  }
+
+  /* El contenido ocupa todo el espacio disponible menos el footer */
+.pagina {
+    flex: 1;
+  }
