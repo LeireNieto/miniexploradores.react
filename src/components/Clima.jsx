@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useAppContext } from "../context/AppContext";
 
 const API_KEY = import.meta.env.VITE_CLIMA_API_KEY;
 
@@ -8,8 +7,7 @@ function formateaDia(fechaStr) {
   return fecha.toLocaleDateString("es-ES", { weekday: "long", day: "numeric", month: "short" });
 }
 
-export default function Clima() {
-  const { ciudad } = useAppContext();
+export default function Clima({ ciudad }) {
   const [dias, setDias] = useState([]);
   const [error, setError] = useState(null);
 
@@ -51,6 +49,10 @@ export default function Clima() {
         setError("No se pudo cargar el clima. Intenta más tarde.");
       }
     };
+
+    console.log("API KEY:", API_KEY);
+console.log("Ciudad:", ciudad);
+
 
     fetchClima();
   }, [ciudad]);

@@ -10,7 +10,7 @@ export default function ActividadCard({ actividad }) {
           <img
             src={`/imagenes/${actividad.imagen}`}
             alt={actividad.nombre}
-          />
+                     />
           <h3>{actividad.nombre}</h3>
           <button className="flip-btn" onClick={() => setFlip(!flip)}>
             +

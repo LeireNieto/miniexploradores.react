@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react";
-import ActividadCard from "./ActividadCard"; // tu componente para mostrar cada actividad
+import ActividadCard from "./ActividadCard";
+import FiltroCiudad from './FiltroCiudad';
+import Mapa from "./Mapa";
+import Clima from "./Clima";
 
-const ciudades = [
-  { value: "", label: "Selecciona una ciudad" },
-  { value: "Bilbao", label: "Bilbao" },
-  { value: "San Sebastián", label: "San Sebastián" },
-  { value: "Vitoria", label: "Vitoria" },
-  { value: "Santander", label: "Santander" },
-  { value: "Pamplona", label: "Pamplona" },
-  { value: "Logroño", label: "Logroño" },
-];
+function normalize(str) {
+  return str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
 
 export default function Actividades() {
   const [actividades, setActividades] = useState([]);
   const [ciudad, setCiudad] = useState("");
+  const [mostrarMapa, setMostrarMapa] = useState(false);
+  const [mostrarClima, setMostrarClima] = useState(false);
 
   useEffect(() => {
     fetch("/actividades.json")
@@ -21,42 +24,53 @@ export default function Actividades() {
       .then(data => setActividades(data));
   }, []);
 
-  // Filtra las actividades según la ciudad seleccionada
   const actividadesFiltradas = ciudad
-  ? actividades.filter(a =>
-      a.ciudad.trim().toLowerCase() === ciudad.trim().toLowerCase()
-    )
-  : [];
-
-     // Debug
-  console.log({ ciudad, actividades, actividadesFiltradas });
+    ? actividades.filter(
+        a => normalize(a.ciudad) === normalize(ciudad)
+      )
+    : [];
 
   return (
     <div>
       <h2>Actividades</h2>
-      <div className="filtro">
-        <label htmlFor="ciudad">Ciudad:</label>
-        <select
-          id="ciudad"
-          value={ciudad}
-          onChange={e => setCiudad(e.target.value)}
-        >
-          {ciudades.map(c => (
-            <option key={c.value} value={c.value}>
-              {c.label}
-            </option>
-          ))}
-        </select>
+      {/* Filtro y botones alineados */}
+      <div className="filtro-botones">
+        <FiltroCiudad ciudad={ciudad} setCiudad={setCiudad} />
+        <div className="botones-derecha">
+          <button onClick={() => setMostrarMapa(m => !m)}>
+            {mostrarMapa ? "Ocultar mapa" : "Ver mapa"}
+          </button>
+          <button onClick={() => setMostrarClima(c => !c)}>
+            {mostrarClima ? "Ocultar clima" : "Ver clima"}
+          </button>
+        </div>
       </div>
 
-      <div>
+      {/* Tarjetas alineadas horizontalmente */}
+      <div className="contenedor-tarjetas">
         {ciudad === "" && <p>Selecciona una ciudad para ver las actividades.</p>}
         {ciudad !== "" && actividadesFiltradas.length === 0 && (
           <p>No hay actividades para esta ciudad.</p>
         )}
-        {actividadesFiltradas.map((actividad, idx) => (
-          <ActividadCard key={idx} actividad={actividad} />
-        ))}
+        {ciudad !== "" && actividadesFiltradas.length > 0 &&
+          actividadesFiltradas.map((actividad, idx) => (
+            <ActividadCard key={idx} actividad={actividad} />
+          ))
+        }
+      </div>
+
+      {/* Mapa y clima debajo de las tarjetas */}
+      <div className="info-extra">
+        {mostrarMapa && (
+          <div className="mapa">
+            <Mapa ciudad={ciudad} />
+          </div>
+        )}
+        {mostrarClima && (
+          <div className="clima">
+            <Clima ciudad={ciudad} />
+          </div>
+        )}
       </div>
     </div>
   );

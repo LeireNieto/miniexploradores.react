@@ -1,38 +1,33 @@
-import { useEffect } from "react";
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-
 export default function Mapa({ actividades }) {
-  useEffect(() => {
-    // Solo inicializar una vez
-    let map = L.map("mapa").setView([43.2630, -2.9350], 12);
+  // Si no hay actividades, muestra el mapa centrado en Bilbao
+  const defaultPosition = [43.2630, -2.9350];
+  const position = actividades.length && actividades[0].lat && actividades[0].lng
+    ? [actividades[0].lat, actividades[0].lng]
+    : defaultPosition;
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "&copy; OpenStreetMap contributors",
-    }).addTo(map);
-
-    // Limpiar marcadores previos
-    map.eachLayer((layer) => {
-      if (layer instanceof L.Marker) map.removeLayer(layer);
-    });
-
-    // Añadir marcadores de actividades filtradas
-    actividades.forEach((a) => {
-      if (a.lat && a.lng) {
-        L.marker([a.lat, a.lng])
-          .addTo(map)
-          .bindPopup(`<strong>${a.nombre}</strong><br>${a.ubicacion}`);
-      }
-    });
-
-    // Centrar mapa si hay actividades
-    if (actividades.length && actividades[0].lat && actividades[0].lng) {
-      map.setView([actividades[0].lat, actividades[0].lng], 13);
-    }
-
-    // Limpieza al desmontar
-    return () => map.remove();
-  }, [actividades]);
-
-  return <div id="mapa" style={{ width: "984px", height: "400px", margin: "51px auto" }}></div>;
+  return (
+    <div>
+      <MapContainer center={position} zoom={13}>
+        <TileLayer
+          attribution='&copy; OpenStreetMap contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {actividades.map((a, idx) =>
+          a.lat && a.lng ? (
+            <Marker key={idx} position={[a.lat, a.lng]}>
+              <Popup>
+                <strong>{a.nombre}</strong>
+                <br />
+                {a.ubicacion}
+              </Popup>
+            </Marker>
+          ) : null
+        )}
+      </MapContainer>
+    </div>
+  );
 }
