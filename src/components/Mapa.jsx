@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-
 export default function Mapa({ actividades }) {
-  // Si no hay actividades, muestra el mapa centrado en Bilbao
   const defaultPosition = [43.2630, -2.9350];
   const position = actividades.length && actividades[0].lat && actividades[0].lng
     ? [actividades[0].lat, actividades[0].lng]
     : defaultPosition;
 
+  // Estado para guardar qué popup está abierto (por índice)
+  const [popupAbierto, setPopupAbierto] = useState(null);
+
+  // Al cambiar actividades, cerramos cualquier popup abierto
+  useEffect(() => {
+    setPopupAbierto(null);
+  }, [actividades]);
+
   return (
     <div className="mapa">
-      <MapContainer center={position} zoom={13}>
+      <MapContainer key={actividades.length ? actividades[0].lat + "-" + actividades[0].lng : "default"}
+        center={position}
+        zoom={13}
+        minZoom={5}
+        maxZoom={12}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -20,12 +31,23 @@ export default function Mapa({ actividades }) {
 
         {actividades.map((a, idx) =>
           a.lat && a.lng ? (
-            <Marker key={idx} position={[a.lat, a.lng]}>
-              <Popup>
-                <strong>{a.nombre}</strong>
-                <br />
-                {a.ubicacion}
-              </Popup>
+            <Marker
+              key={idx}
+              position={[a.lat, a.lng]}
+              eventHandlers={{
+                click: () => setPopupAbierto(idx),
+              }}
+            >
+              {popupAbierto === idx && (
+                <Popup
+                  onClose={() => setPopupAbierto(null)}
+                  autoClose={false} // Para controlar manualmente el cierre
+                >
+                  <strong>{a.nombre}</strong>
+                  <br />
+                  {a.ubicacion}
+                </Popup>
+              )}
             </Marker>
           ) : null
         )}
