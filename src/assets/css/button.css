@@ -1,22 +1,23 @@
 
 
 .button {
-    background-color: #c26e2a;
-    color: white;
-    padding: 8px 16px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #005fa3;
-  }
-  
-  .button:active {
-    background-color: #004d85;
-  }
+  background-color: #12c7af;
+  color: white;
+  padding: 8px 16px;
+  margin: 0 5px;
+  margin-left: 70px; /* Ajusta este valor según sea necesario */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0cb661;
+}
+
+.button:active {
+  background-color: #0cb661;
+}
   

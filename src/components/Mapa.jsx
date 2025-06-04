@@ -2,6 +2,7 @@ import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
+
 export default function Mapa({ actividades }) {
   // Si no hay actividades, muestra el mapa centrado en Bilbao
   const defaultPosition = [43.2630, -2.9350];
@@ -10,12 +11,13 @@ export default function Mapa({ actividades }) {
     : defaultPosition;
 
   return (
-    <div>
+    <div className="mapa">
       <MapContainer center={position} zoom={13}>
         <TileLayer
-          attribution='&copy; OpenStreetMap contributors'
+          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
         {actividades.map((a, idx) =>
           a.lat && a.lng ? (
             <Marker key={idx} position={[a.lat, a.lng]}>

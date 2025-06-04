@@ -69,7 +69,7 @@ export default function Actividades() {
       <div className="info-extra">
         {mostrarMapa && (
           <div className="mapa">
-            <Mapa ciudad={ciudad} />
+            <Mapa actividades={actividadesFiltradas} />
           </div>
         )}
         {mostrarClima && (
