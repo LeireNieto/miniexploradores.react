@@ -26,12 +26,15 @@
 
 /* Hace que body llene toda la altura de la pantalla */
 html, body {
-    html, body {
+    html {
+        height: 100%; /* Asegura que el html ocupe toda la altura */
+    }
+    body {
         height: auto; /* Asegura que la altura se ajuste al contenido */
         min-height: 100%; /* Permite que la página se estire por completo */
         overflow: auto; /* Permite el desplazamiento si el contenido es más grande que la pantalla */
         padding-top: 60px; /* Ajusta según el tamaño del encabezado fijo */
-        background-color:#beebe3;; /* Cambia el color de fondo según tus preferencias */
+        background-color:#abe6db;; /* Cambia el color de fondo según tus preferencias */
     }
     
   }

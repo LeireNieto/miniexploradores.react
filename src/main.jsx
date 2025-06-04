@@ -14,6 +14,7 @@ import './assets/css/mapa.css';
 import './assets/css/filtro-botones.css';
 import './assets/css/button.css';
 import "./assets/css/mapa.css";
+import './assets/css/flipbutton.css';
 
 
 

@@ -1,11 +1,10 @@
-
+/* button.css o centralízalo en actividades.css */
 
 .button {
   background-color: #12c7af;
   color: white;
   padding: 8px 16px;
-  margin: 0 5px;
-  margin-left: 70px; /* Ajusta este valor según sea necesario */
+  margin: 0 5px; /* espacio horizontal entre botones */
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -13,11 +12,7 @@
   transition: background-color 0.3s ease;
 }
 
-.button:hover {
-  background-color: #0cb661;
-}
-
+.button:hover,
 .button:active {
   background-color: #0cb661;
 }
-  

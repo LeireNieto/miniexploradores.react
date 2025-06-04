@@ -32,7 +32,7 @@ export default function Actividades() {
     : [];
 
   return (
-    <div>
+    <div className="actividades-pagina">
       <h2>Actividades</h2>
       {/* Filtro y botones alineados */}
       <div className="filtro-botones">

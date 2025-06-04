@@ -1,0 +1,30 @@
+.flip-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: #29b6f6;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 8px;
+  }
+  
+  .flip-btn .btn-text {
+    display: inline-block;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+  
+  /* Ocultar texto en la parte trasera */
+  .card-back .flip-btn .btn-text {
+    display: none;
+  }
+  
