@@ -3,6 +3,7 @@ import ActividadCard from "./ActividadCard";
 import FiltroCiudad from './FiltroCiudad';
 import Mapa from "./Mapa";
 import Clima from "./Clima";
+import Button from "./Button";
 
 function normalize(str) {
   return str
@@ -26,8 +27,8 @@ export default function Actividades() {
 
   const actividadesFiltradas = ciudad
     ? actividades.filter(
-        a => normalize(a.ciudad) === normalize(ciudad)
-      )
+      a => normalize(a.ciudad) === normalize(ciudad)
+    )
     : [];
 
   return (
@@ -36,14 +37,19 @@ export default function Actividades() {
       {/* Filtro y botones alineados */}
       <div className="filtro-botones">
         <FiltroCiudad ciudad={ciudad} setCiudad={setCiudad} />
-        <div className="botones-derecha">
-          <button onClick={() => setMostrarMapa(m => !m)}>
-            {mostrarMapa ? "Ocultar mapa" : "Ver mapa"}
-          </button>
-          <button onClick={() => setMostrarClima(c => !c)}>
-            {mostrarClima ? "Ocultar clima" : "Ver clima"}
-          </button>
-        </div>
+        <Button
+          isActive={mostrarMapa}
+          onToggle={() => setMostrarMapa(m => !m)}
+          textoActivo="Ocultar mapa"
+          textoInactivo="Ver mapa"
+        />
+        <Button
+          isActive={mostrarClima}
+          onToggle={() => setMostrarClima(c => !c)}
+          textoActivo="Ocultar clima"
+          textoInactivo="Ver clima"
+        />
+
       </div>
 
       {/* Tarjetas alineadas horizontalmente */}
