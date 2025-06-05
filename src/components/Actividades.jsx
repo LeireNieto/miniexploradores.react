@@ -18,6 +18,8 @@ export default function Actividades() {
   const [ciudad, setCiudad] = useState("");
   const [mostrarMapa, setMostrarMapa] = useState(false);
   const [mostrarClima, setMostrarClima] = useState(false);
+  const [scrollIndex, setScrollIndex] = useState(0);
+  const visibleCards = 4;
 
   useEffect(() => {
     fetch("/actividades.json")
@@ -26,15 +28,27 @@ export default function Actividades() {
   }, []);
 
   const actividadesFiltradas = ciudad
-    ? actividades.filter(
-      a => normalize(a.ciudad) === normalize(ciudad)
-    )
+    ? actividades.filter(a => normalize(a.ciudad) === normalize(ciudad))
     : [];
+
+  const maxIndex = Math.max(actividadesFiltradas.length - visibleCards, 0);
+
+  useEffect(() => {
+    if (scrollIndex > maxIndex) setScrollIndex(0);
+  }, [actividadesFiltradas, maxIndex, scrollIndex]);
+
+  const handleLeftClick = () => {
+    setScrollIndex(i => Math.max(i - 1, 0));
+  };
+
+  const handleRightClick = () => {
+    setScrollIndex(i => Math.min(i + 1, maxIndex));
+  };
 
   return (
     <div className="actividades-pagina">
       <h2>Actividades</h2>
-      {/* Filtro y botones alineados */}
+
       <div className="filtro-botones">
         <FiltroCiudad ciudad={ciudad} setCiudad={setCiudad} />
         <Button
@@ -49,23 +63,30 @@ export default function Actividades() {
           textoActivo="Ocultar clima"
           textoInactivo="Ver clima"
         />
-
       </div>
 
-      {/* Tarjetas alineadas horizontalmente */}
-      <div className="contenedor-tarjetas">
-        {ciudad === "" && <p>Selecciona una ciudad para ver las actividades.</p>}
-        {ciudad !== "" && actividadesFiltradas.length === 0 && (
-          <p>No hay actividades para esta ciudad.</p>
-        )}
-        {ciudad !== "" && actividadesFiltradas.length > 0 &&
-          actividadesFiltradas.map((actividad, idx) => (
-            <ActividadCard key={idx} actividad={actividad} />
-          ))
-        }
-      </div>
+      {ciudad === "" && <p>Selecciona una ciudad para ver las actividades.</p>}
+      {ciudad !== "" && actividadesFiltradas.length === 0 && (
+        <p>No hay actividades para esta ciudad.</p>
+      )}
 
-      {/* Mapa y clima debajo de las tarjetas */}
+      {ciudad !== "" && actividadesFiltradas.length > 0 && (
+        <div className="carousel-container">
+  <button className="carousel-btn left" onClick={handleLeftClick} disabled={scrollIndex === 0}>‹</button>
+
+  <div className="carousel-wrapper">
+    <div className="carousel-cards" style={{ transform: `translateX(-${scrollIndex * 25}%)` }}>
+      {actividadesFiltradas.map((actividad, idx) => (
+        <ActividadCard key={idx} actividad={actividad} />
+      ))}
+    </div>
+  </div>
+
+  <button className="carousel-btn right" onClick={handleRightClick} disabled={scrollIndex === maxIndex}>›</button>
+</div>
+
+      )}
+
       <div className="info-extra">
         {mostrarMapa && (
           <div className="mapa">

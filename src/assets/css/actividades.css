@@ -12,4 +12,58 @@
   overflow: hidden; /* esto evita glitches visuales */
   
   }
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+  }
+  
+  .carousel-wrapper {
+    overflow: hidden;
+    width: 90%; /* deja espacio para flechas a los lados */
+  }
+  
+  .carousel-cards {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: max-content;
+  }
+  
+  .actividad-card {
+    flex: 0 0 25%; /* 4 cards visibles */
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 123, 255, 0.8);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50%;
+    z-index: 20;
+    cursor: pointer;
+  }
+  
+  .carousel-btn.left {
+    left: 10px;
+  }
+  
+  .carousel-btn.right {
+    right: 10px;
+  }
+  
+  .carousel-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
   
