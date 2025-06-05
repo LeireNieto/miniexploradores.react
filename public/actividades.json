@@ -2,7 +2,7 @@
     {
         "ciudad": "Bilbao",
         "nombre": "Itsasmuseoa",
-        "imagen": "Bilbao/itsasmuseoa.jpg",
+        "imagen": "./Bilbao/itsasmuseoa.jpg",
         "descripcion": "Museo del mar con actividades para toda la familia.",
         "edad": "Todas las edades",
         "precio": "Gratis menores de 6 años",
