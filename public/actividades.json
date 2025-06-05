@@ -2,7 +2,7 @@
     {
         "ciudad": "Bilbao",
         "nombre": "Itsasmuseoa",
-        "imagen": "./Bilbao/itsasmuseoa.jpg",
+        "imagen": "imagenes/Bilbao/itsasmuseoa.jpg",
         "descripcion": "Museo del mar con actividades para toda la familia.",
         "edad": "Todas las edades",
         "precio": "Gratis menores de 6 años",
@@ -14,7 +14,7 @@
     {
         "ciudad": "Bilbao",
         "nombre": "Parque Doña Casilda",
-        "imagen": "Bilbao/donacasilda.jpg",
+        "imagen": "imagenes/Bilbao/donacasilda.jpg",
         "descripcion": "Un parque con áreas de juegos y un estanque con patos.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -26,7 +26,7 @@
     {
         "ciudad": "Bilbao",
         "nombre": "Bosque de Oma",
-        "imagen": "Bilbao/oma.jpeg",
+        "imagen": "imagenes/Bilbao/oma.jpeg",
         "descripcion": "Un bosque con árboles pintados por Agustín Ibarrola.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -38,7 +38,7 @@
     {
         "ciudad": "Bilbao",
         "nombre": "Museo Guggenheim",
-        "imagen": "Bilbao/guggenheim.jpg",
+        "imagen": "imagenes/Bilbao/guggenheim.jpg",
         "descripcion": "Un museo de arte contemporáneo con exposiciones interactivas.",
         "edad": "Todas las edades",
         "precio": "16€ por persona",
@@ -50,7 +50,7 @@
     {
         "ciudad": "San Sebastián",
         "nombre": "Monte Urgull",
-        "imagen": "Donosti/monteurgull.jpg",
+        "imagen": "imagenes/Donosti/monteurgull.jpg",
         "descripcion": "Una colina con vistas panorámicas y un castillo.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -62,7 +62,7 @@
     {
         "ciudad": "San Sebastián",
         "nombre": "Aquarium",
-        "imagen": "Donosti/aquarium.jpeg",
+        "imagen": "imagenes/Donosti/aquarium.jpeg",
         "descripcion": "Un acuario con una gran variedad de especies marinas.",
         "edad": "Todas las edades",
         "precio": "15€ por persona",
@@ -74,7 +74,7 @@
     {
         "ciudad": "San Sebastián",
         "nombre": "Parque de Atracciones Monte Igueldo",
-        "imagen": "Donosti/monteigueldo.jpeg",
+        "imagen": "imagenes/Donosti/monteigueldo.jpeg",
         "descripcion": "Un parque de atracciones con vistas a la ciudad.",
         "edad": "Todas las edades",
         "precio": "Gratis menores de 6 años",
@@ -86,7 +86,7 @@
     {
         "ciudad": "San Sebastián",
         "nombre": "Playa de la Concha",
-        "imagen": "Donosti/laconcha.jpg",
+        "imagen": "imagenes/Donosti/laconcha.jpg",
         "descripcion": "Una playa con aguas tranquilas y arena fina.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -98,7 +98,7 @@
     {
         "ciudad": "San Sebastián",
         "nombre": "Museo de la Ciencia Eureka!",
-        "imagen": "Donosti/eureka.jpg",
+        "imagen": "imagenes/Donosti/eureka.jpg",
         "descripcion": "Un museo interactivo de ciencia y tecnología.",
         "edad": "Todas las edades",
         "precio": "10€ por persona",
@@ -110,7 +110,7 @@
     {
         "ciudad": "San Sebastián",
         "nombre": "Albaola Itsas Kultur Faktoria",
-        "imagen": "Donosti/albaola.jpeg",
+        "imagen": "imagenes/Donosti/albaola.jpeg",
         "descripcion": "Un centro cultural dedicado a la construcción de barcos.",
         "edad": "Todas las edades",
         "precio": "10€ por persona",
@@ -122,7 +122,7 @@
     {
         "ciudad": "San Sebastián",
         "nombre": "Parque Aiete",
-        "imagen": "Donosti/parqueaiete.jpeg",
+        "imagen": "imagenes/Donosti/parqueaiete.jpeg",
         "descripcion": "Un parque con jardines y un palacio.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -134,7 +134,7 @@
     {
         "ciudad": "Vitoria",
         "nombre": "Parque de la Florida",
-        "imagen": "Vitoria/parqueFlorida.jpeg",
+        "imagen": "imagenes/Vitoria/parqueFlorida.jpeg",
         "descripcion": "Un parque con jardines y áreas de juegos.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -146,7 +146,7 @@
     {
         "ciudad": "Vitoria",
         "nombre": "Museo de Ciencias Naturales",
-        "imagen": "Vitoria/museocienciasnaturales.jpeg",
+        "imagen": "imagenes/Vitoria/museocienciasnaturales.jpeg",
         "descripcion": "Un museo con exposiciones sobre la naturaleza y la ciencia.",
         "edad": "Todas las edades",
         "precio": "5€ por persona",
@@ -158,7 +158,7 @@
     {
         "ciudad": "Santander",
         "nombre": "Palacio de la Magdalena",
-        "imagen": "Santander/palaciomagdalena.jpg",
+        "imagen": "imagenes/Santander/palaciomagdalena.jpg",
         "descripcion": "Un palacio con jardines y vistas al mar.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -170,7 +170,7 @@
     {
         "ciudad": "Santander",
         "nombre": "Centro Botín",
-        "imagen": "Santander/centrobotin.jpg",
+        "imagen": "imagenes/Santander/centrobotin.jpg",
         "descripcion": "Un centro de arte contemporáneo con actividades para niños.",
         "edad": "Todas las edades",
         "precio": "10€ por persona",
@@ -182,7 +182,7 @@
     {
         "ciudad": "Santander",
         "nombre": "Museo Marítimo del Cantábrico",
-        "imagen": "Santander/museomaritimodelcantabrico.jpeg",
+        "imagen": "imagenes/Santander/museomaritimodelcantabrico.jpeg",
         "descripcion": "Un museo con exposiciones sobre la vida marina.",
         "edad": "Todas las edades",
         "precio": "6€ por persona",
@@ -194,7 +194,7 @@
     {
         "ciudad": "Santander",
         "nombre": "Parque de la Naturaleza de Cabárceno",
-        "imagen": "Santander/cabarceno.webp",
+        "imagen": "imagenes/Santander/cabarceno.webp",
         "descripcion": "Un parque con animales en semilibertad.",
         "edad": "Todas las edades",
         "precio": "30€ por persona",
@@ -206,7 +206,7 @@
     {
         "ciudad": "Santander",
         "nombre": "Playa del Sardinero",
-        "imagen": "Santander/sardinero.jpg",
+        "imagen": "imagenes/Santander/sardinero.jpg",
         "descripcion": "Una playa con aguas tranquilas y arena fina.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -218,7 +218,7 @@
     {
         "ciudad": "Santander",
         "nombre": "Parque de las Llamas",
-        "imagen": "Santander/parquelasllamas.jpg",
+        "imagen": "imagenes/Santander/parquelasllamas.jpg",
         "descripcion": "Un parque con áreas de juegos y un lago.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -230,7 +230,7 @@
     {
         "ciudad": "Santander",
         "nombre": "Museo de Prehistoria y Arqueología",
-        "imagen": "Santander/museoprehistoriacantabria.jpg",
+        "imagen": "imagenes/Santander/museoprehistoriacantabria.jpg",
         "descripcion": "Un museo con exposiciones sobre la prehistoria y la arqueología.",
         "edad": "Todas las edades",
         "precio": "5€ por persona",
@@ -242,7 +242,7 @@
     {
         "ciudad": "Logroño",
         "nombre": "Parque del Ebro",
-        "imagen": "Logroño/parquedelebro.jpeg",
+        "imagen": "imagenes/Logroño/parquedelebro.jpeg",
         "descripcion": "Parque amplio con zonas verdes, juegos infantiles y vistas al río.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -254,7 +254,7 @@
     {
         "ciudad": "Logroño",
         "nombre": "Museo de La Rioja",
-        "imagen": "Logroño/museolarioja.jpeg",
+        "imagen": "imagenes/Logroño/museolarioja.jpeg",
         "descripcion": "Museo con historia y cultura riojana adaptado a visitas familiares.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -266,7 +266,7 @@
     {
         "ciudad": "Logroño",
         "nombre": "Casa de las Ciencias",
-        "imagen": "Logroño/casadelasciencias.jpg",
+        "imagen": "imagenes/Logroño/casadelasciencias.jpg",
         "descripcion": "Centro interactivo de ciencia y experimentación para niños.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -278,7 +278,7 @@
     {
         "ciudad": "Pamplona",
         "nombre": "Parque de la Taconera",
-        "imagen": "Pamplona/parquetaconera.jpg",
+        "imagen": "imagenes/Pamplona/parquetaconera.jpg",
         "descripcion": "Parque histórico con pequeños animales y jardines.",
         "edad": "Todas las edades",
         "precio": "Gratis",
@@ -290,7 +290,7 @@
     {
         "ciudad": "Pamplona",
         "nombre": "Planetario de Pamplona",
-        "imagen": "Pamplona/planetario.jpeg",
+        "imagen": "imagenes/Pamplona/planetario.jpeg",
         "descripcion": "Proyecciones astronómicas y actividades educativas para niños.",
         "edad": "Desde 4 años",
         "precio": "6€ por persona",
@@ -302,7 +302,7 @@
     {
         "ciudad": "Pamplona",
         "nombre": "Ciudadela de Pamplona",
-        "imagen": "Pamplona/ciudadela.jpeg",
+        "imagen": "imagenes/Pamplona/ciudadela.jpeg",
         "descripcion": "Antigua fortificación con jardines y actividades culturales.",
         "edad": "Todas las edades",
         "precio": "Gratis",

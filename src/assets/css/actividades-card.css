@@ -55,6 +55,17 @@
   gap: 10px;
 }
 
+.card img {
+  width: 100%;       /* que ocupe el ancho del contenedor */
+  height: 200px;     /* altura fija para controlar la proporción (puedes ajustarla) */
+  object-fit: contain; /* mantiene la proporción y muestra espacios si la imagen no llena todo */
+  display: block;
+  margin: 10px auto; /* espacio arriba y abajo, centrado horizontal */
+  background-color: #f0f0f0; /* opcional, para que se note el espacio */
+  border-radius: 8px; /* opcional, bordes redondeados */
+}
+
+
 .flip-btn {
   background-color: #29b6f6;
   color: white;

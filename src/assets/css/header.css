@@ -50,7 +50,8 @@
       left: 0;
       right: 0;
       height: 700px; /* Ajusta la altura del fondo si quieres más/menos área visible */
-      background-image: url('../imagenes/logo.png'); /* Adjust path if necessary */
+      background-image: url('/imagenes/logo.png');
+
       background-repeat: no-repeat;
       background-position: center top;
       background-size: 700px auto;
