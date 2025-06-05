@@ -4,20 +4,20 @@ export default function ActividadCard({ actividad }) {
   const [flip, setFlip] = useState(false);
 
   return (
-    <div className={`card actividad-card${flip ? " flip" : ""}`}>
+    <div className={`card actividad-card ${flip ? " flip" : ""}`}>
       <div className="card-inner">
         <div className="card-front">
-          <img src={`/imagenes/${actividad.imagen}`} alt={actividad.nombre}         />
+          <img src={`/imagenes/${actividad.imagen}`} alt={actividad.nombre} />
           <h3>{actividad.nombre}</h3>
-         
-          <button className="flip-btn" onClick={() => setFlip(!flip)}>
-            🔄 Más info
-          </button>
 
-          <button className="fav-btn">♥</button>
+          <div className="card-front-bottom">
+            <button className="fav-btn">♥</button>
+            <button className="flip-btn" onClick={() => setFlip(!flip)}>
+              🔄
+            </button>
+          </div>
         </div>
 
-        {/* BACK */}
         <div className="card-back">
           <p>{actividad.descripcion}</p>
           <p><strong>Edad recomendada:</strong> {actividad.edad}</p>
@@ -29,7 +29,6 @@ export default function ActividadCard({ actividad }) {
             </a>
           )}
 
-          {/* Mismo botón de giro sin texto */}
           <button className="flip-btn" onClick={() => setFlip(!flip)}>
             🔄
           </button>

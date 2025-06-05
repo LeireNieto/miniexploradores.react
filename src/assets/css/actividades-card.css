@@ -1,9 +1,11 @@
 .actividad-card {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 300px; /* ancho fijo */
   width: 300px;
   height: 400px;
-  perspective: 1000px;
-  margin: 1rem;
 }
+
 
 .card-inner {
   width: 100%;
@@ -17,51 +19,44 @@
   transform: rotateY(180deg);
 }
 
-
-.card-back {
+.card-front, .card-back {
   position: absolute;
-  width: 65%;
+  width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  padding: 1rem;
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 15px;
-  box-sizing: border-box;
+  justify-content: space-between;
+  background: white;
 }
-
-
 
 .card-back {
   background: #64bcae;
   color: white;
   transform: rotateY(180deg);
-  z-index: 1;
-}
-
-.card-buttons {
-  margin-top: auto; /* empuja botones hacia abajo */
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  overflow: hidden; /* evitar que contenido grande expanda la card */
 }
 
 .card img {
-  width: 100%;       /* que ocupe el ancho del contenedor */
-  height: 200px;     /* altura fija para controlar la proporción (puedes ajustarla) */
-  object-fit: contain; /* mantiene la proporción y muestra espacios si la imagen no llena todo */
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
   display: block;
-  margin: 10px auto; /* espacio arriba y abajo, centrado horizontal */
-  background-color: #f0f0f0; /* opcional, para que se note el espacio */
-  border-radius: 8px; /* opcional, bordes redondeados */
+  margin: 10px auto;
+  background-color: #f0f0f0;
+  border-radius: 8px;
 }
 
+.card-front-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 0 0.5rem;
+}
 
 .flip-btn {
   background-color: #29b6f6;
@@ -70,8 +65,7 @@
   border-radius: 50%;
   padding: 6px 10px;
   cursor: pointer;
-  font-size: 1rem;
-  flex-shrink: 0;
+  font-size: 1.2rem;
   width: 40px;
   height: 40px;
   display: flex;
@@ -82,43 +76,21 @@
 .fav-btn {
   background-color: transparent;
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   cursor: pointer;
   color: #ff8a80;
-  flex-shrink: 0;
   width: 40px;
   height: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding-left: 4px;
 }
 
-.card-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-.card-front-bottom {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: auto;
-}
-
-.fav-btn,
-.flip-btn {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
+/* Para evitar que párrafos crezcan demasiado y desajusten tamaño */
+.card-back p {
+  margin: 0.2rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
